@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYDCAG — Sydney Complex Aortic Group</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── PASSWORD GATE ─────────────────────────────────────────────────── -->
+<div id="gate">
+  <div class="gate-inner">
+    <div class="gate-wordmark">SYDCAG</div>
+    <div class="gate-sub">Sydney Complex Aortic Group</div>
+    <div class="gate-rule"></div>
+    <p class="gate-prompt">This site is for invited participants only.<br>Please enter the access code.</p>
+    <div class="gate-field-wrap">
+      <input id="pw-input" type="password" placeholder="Access code" autocomplete="off" spellcheck="false">
+      <button id="pw-btn" onclick="checkPassword()">Enter</button>
+    </div>
+    <p id="pw-error" class="gate-error" style="display:none;">Incorrect code. Please check your invitation.</p>
+    <p class="gate-footer">Royal North Shore Hospital · Department of Vascular Surgery · 2026</p>
+  </div>
+</div>
+
+<!-- ── MAIN SITE ──────────────────────────────────────────────────────── -->
+<div id="site" style="display:none;">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">SYDCAG</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#dinner">The Dinner</a>
+        <a href="#documents">Documents</a>
+        <a href="#input">Your Input</a>
+      </div>
+      <div class="nav-burger" onclick="toggleNav()">&#9776;</div>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#about" onclick="toggleNav()">About</a>
+      <a href="#evidence" onclick="toggleNav()">Evidence</a>
+      <a href="#dinner" onclick="toggleNav()">The Dinner</a>
+      <a href="#documents" onclick="toggleNav()">Documents</a>
+      <a href="#input" onclick="toggleNav()">Your Input</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">Royal North Shore Hospital</div>
+      <h1 class="hero-title">SYDCAG</h1>
+      <p class="hero-full">Sydney Complex Aortic Group</p>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Towards a Collaborative Aortic Programme<br>between Vascular Surgery and Cardiothoracic Surgery</p>
+      <div class="hero-chips">
+        <span class="chip chip-blue">Founding Dinner · 12 May 2026</span>
+        <span class="chip chip-teal">Royal North Shore Hospital</span>
+      </div>
+      <a href="#about" class="hero-cta">Learn more ↓</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section-light">
+    <div class="container">
+      <div class="section-label">The Proposal</div>
+      <h2 class="section-title">What is SYDCAG?</h2>
+      <div class="two-col">
+        <div class="prose">
+          <p>SYDCAG — the Sydney Complex Aortic Group — is a proposed collaborative clinical programme between Vascular Surgery and Cardiothoracic Surgery at Royal North Shore Hospital.</p>
+          <p>Its purpose is to deliver structured, jointly governed care for patients with complex thoracic and thoracoabdominal aortic disease: cases that sit at the intersection of both specialties and that benefit most from simultaneous, coordinated expertise.</p>
+          <p>The premise is straightforward. Complex aortic disease does not respect the boundaries that have historically divided our specialties. At RNSH, the capability already exists within both departments. <strong>The gap is not expertise — it is structure.</strong></p>
+        </div>
+        <div class="pillars">
+          <div class="pillar pillar-blue">
+            <div class="pillar-icon">◈</div>
+            <div class="pillar-title">Joint Case Conference</div>
+            <div class="pillar-text">Fortnightly MDT — all complex aortic cases reviewed jointly, decisions documented, outcomes tracked prospectively.</div>
+          </div>
+          <div class="pillar pillar-teal">
+            <div class="pillar-icon">◉</div>
+            <div class="pillar-title">Acute Aortic Response</div>
+            <div class="pillar-text">Code Aorta protocol — single activation, both teams simultaneously, no ambiguity at 2am.</div>
+          </div>
+          <div class="pillar pillar-navy">
+            <div class="pillar-icon">◎</div>
+            <div class="pillar-title">Longitudinal Surveillance</div>
+            <div class="pillar-text">Structured follow-up for post-dissection, post-TEVAR, and heritable aortopathy patients.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section id="evidence" class="section section-dark">
+    <div class="container">
+      <div class="section-label light">The Evidence</div>
+      <h2 class="section-title light">What the literature shows</h2>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">0.31</div>
+          <div class="stat-label">Odds ratio for mortality in centres introducing a formal aortic programme vs their own pre-programme era</div>
+          <div class="stat-source">Mariscalco et al., Eur J Prev Cardiol, 2018 · 79,131 patients · 30 studies · observational</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">91%</div>
+          <div class="stat-label">MDT decision implementation rate over 5 years at the Barts Aortovascular MDT</div>
+          <div class="stat-source">Yates et al., AME Surg J, 2022 · 871 discussions · 649 patients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4×</div>
+          <div class="stat-label">Procedural volume increase at University of Washington following formal MAT implementation</div>
+          <div class="stat-source">Sorber et al., 2025 · single centre · 2018–2022</div>
+        </div>
+      </div>
+      <div class="evidence-notes">
+        <div class="evidence-note">
+          <div class="note-dot note-blue"></div>
+          <div>The 2022 ACC/AHA and 2024 EACTS/STS guidelines both document formal aortic team care as a defined standard — not an aspiration.</div>
+        </div>
+        <div class="evidence-note">
+          <div class="note-dot note-teal"></div>
+          <div>The Calgary Aortic Program — the closest international structural analogue to RNSH — restructured from a siloed two-hospital model in 2019. Referral volume grew from 54 to 221 patients per year within three years.</div>
+        </div>
+        <div class="evidence-note">
+          <div class="note-dot note-grey"></div>
+          <div>All studies cited are observational. Evidence is associational, not causal. The signal is nonetheless consistent and reproducible across independent institutions and countries.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DINNER -->
+  <section id="dinner" class="section section-light">
+    <div class="container">
+      <div class="section-label">The Next Step</div>
+      <h2 class="section-title">The Founding Dinner</h2>
+      <div class="dinner-hero">
+        <div class="dinner-date-block">
+          <div class="dinner-date-label">DATE</div>
+          <div class="dinner-date-num">12</div>
+          <div class="dinner-date-month">MAY 2026</div>
+        </div>
+        <div class="dinner-detail">
+          <p>The founding dinner is the first formal collective step for SYDCAG. Its objectives are not to finalise a governance document or agree a clinical protocol — those come later. Its objectives are:</p>
+          <ul class="dinner-list">
+            <li>Share the evidence framework</li>
+            <li>Hear from both departments — priorities, perspectives, and concerns</li>
+            <li>Identify participants for the post-dinner working group</li>
+            <li>Agree a start date for the fortnightly Joint Case Conference</li>
+            <li>Agree the next meeting date and scope of work</li>
+          </ul>
+          <div class="dinner-note">
+            None of what SYDCAG requires to begin needs significant new resources. It needs agreement, structure, and a shared commitment from both departments.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section id="documents" class="section section-mid">
+    <div class="container">
+      <div class="section-label">Reference Materials</div>
+      <h2 class="section-title">Documents</h2>
+      <p class="section-intro">The following documents provide the background evidence and programme design framework for SYDCAG. Please review the Executive Summary before the dinner.</p>
+      <div class="doc-grid">
+        <div class="doc-card doc-priority">
+          <div class="doc-badge">Start here</div>
+          <div class="doc-icon">▤</div>
+          <div class="doc-title">Executive Summary</div>
+          <div class="doc-desc">A concise overview of the SYDCAG proposal — what it is, the evidence, and what's being proposed. Recommended reading before the dinner.</div>
+          <div class="doc-meta">3 pages · Q&A format</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon">▦</div>
+          <div class="doc-title">Phase 1 Evidence Search Report</div>
+          <div class="doc-desc">A systematic review of international literature on collaborative aortic programmes, governance models, and implementation evidence.</div>
+          <div class="doc-meta">10 pages · Evidence synthesis</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon">▧</div>
+          <div class="doc-title">Structured Implementation Plan</div>
+          <div class="doc-desc">A five-stage operational roadmap from bilateral HoD engagement through to formal programme maturation and six-month review.</div>
+          <div class="doc-meta">9 pages · Operational plan</div>
+        </div>
+      </div>
+      <p class="doc-note">Documents will be attached directly to your dinner invitation email. Contact <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a> if you have not received them.</p>
+    </div>
+  </section>
+
+  <!-- INPUT FORM -->
+  <section id="input" class="section section-dark">
+    <div class="container">
+      <div class="section-label light">Before the Dinner</div>
+      <h2 class="section-title light">Your Input</h2>
+      <p class="section-intro light">We want to hear from you before we're all in the room together. Your questions and suggestions will be collated and used to shape the dinner agenda. All responses are shared with Dr Vikram Puttaswamy and S. Saavedra only.</p>
+
+      <div class="form-wrap">
+        <form id="input-form" action="https://formspree.io/f/sebastian.saavedra@health.nsw.gov.au" method="POST">
+          <input type="hidden" name="_subject" value="SYDCAG Pre-Dinner Input">
+          <input type="hidden" name="_replyto" value="">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" required placeholder="Dr / Prof …">
+            </div>
+            <div class="form-group">
+              <label for="f-dept">Department <span class="req">*</span></label>
+              <select id="f-dept" name="department" required>
+                <option value="" disabled selected>Select department</option>
+                <option>Vascular Surgery</option>
+                <option>Cardiothoracic Surgery</option>
+                <option>Cardiology</option>
+                <option>Interventional Radiology</option>
+                <option>Anaesthesia</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-role">Role</label>
+            <select id="f-role" name="role">
+              <option value="" disabled selected>Select role</option>
+              <option>Consultant</option>
+              <option>Fellow</option>
+              <option>Registrar</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-cases">What case types do you encounter most frequently where input from the other specialty would be clinically valuable? <span class="req">*</span></label>
+            <textarea id="f-cases" name="case_types" rows="3" required placeholder="e.g. Type B dissection with arch involvement, complex TAAA, heritable aortopathy…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-practical">What would make the Joint Case Conference practically workable for you — format, timing, frequency?</label>
+            <textarea id="f-practical" name="practical_considerations" rows="3" placeholder="e.g. Preferred day/time, duration, how cases should be selected…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-concerns">What concerns or barriers do you anticipate, and what would need to be in place to address them?</label>
+            <textarea id="f-concerns" name="concerns" rows="3" placeholder="e.g. Workload, rostering, governance, resource requirements…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-dinner">Is there anything specific you would want discussed or agreed at the founding dinner?</label>
+            <textarea id="f-dinner" name="dinner_agenda" rows="3" placeholder="Your priorities for the evening…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-other">Any other thoughts, questions, or suggestions?</label>
+            <textarea id="f-other" name="other" rows="3" placeholder="Anything else on your mind…"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn">Submit your input →</button>
+          <div id="form-success" class="form-success" style="display:none;">
+            <div class="success-icon">✓</div>
+            <div class="success-title">Thank you.</div>
+            <div class="success-text">Your input has been received and will be reviewed before the dinner. We look forward to seeing you on 12 May.</div>
+          </div>
+          <div id="form-error" class="form-error-msg" style="display:none;">
+            Something went wrong. Please email your input directly to <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">SYDCAG</div>
+      <div class="footer-sub">Sydney Complex Aortic Group · Royal North Shore Hospital · 2026</div>
+      <div class="footer-rule"></div>
+      <div class="footer-contact">
+        Department of Vascular Surgery · RNSH ·
+        <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a>
+      </div>
+      <div class="footer-disc">This site is for invited participants only. It does not contain patient-identifiable information. All submissions are received by the SYDCAG programme team.</div>
+    </div>
+  </footer>
+
+</div><!-- /site -->
+
+<script src="app.js"></script>
+</body>
+</html>
