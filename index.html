@@ -3,131 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYDCAG — Programme Hub</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0d1f3c;--navy-mid:#162847;--navy-lite:#1e3a5f;--steel:#2e6da4;--steel-lite:#3d87c5;--sky:#6aaed6;--white:#f5f9fc;--text:#e8f0f8;--muted:#8aacc8;--success:#4caf50;--border:rgba(100,160,220,0.18);--font-head:'Georgia','Times New Roman',serif;--font-body:'Trebuchet MS','Gill Sans','Segoe UI',sans-serif;--font-mono:'Courier New',monospace;--shadow-sm:0 2px 8px rgba(0,0,0,0.25);--shadow-md:0 6px 24px rgba(0,0,0,0.35);--shadow-lg:0 12px 48px rgba(0,0,0,0.45);--radius:6px;--radius-lg:12px}
-html{scroll-behavior:smooth}body{background:var(--navy);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.7;min-height:100vh}
-#lock-screen{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 50%,#0a2240 100%);display:flex;align-items:center;justify-content:center;flex-direction:column}
-.lock-card{background:rgba(22,40,71,0.92);border:1px solid var(--border);border-top:2px solid var(--steel);border-radius:var(--radius-lg);padding:52px 48px 44px;width:min(420px,92vw);text-align:center;box-shadow:var(--shadow-lg);position:relative;z-index:1;animation:fadeUp 0.6s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.lock-logo{font-family:var(--font-head);font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.lock-title{font-family:var(--font-head);font-size:2.4rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;line-height:1.15;margin-bottom:6px}
-.lock-subtitle{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:36px}
-.lock-divider{width:40px;height:2px;background:linear-gradient(90deg,transparent,var(--steel),transparent);margin:0 auto 36px}
-#lock-screen input{width:100%;background:rgba(13,31,60,0.8);border:1px solid var(--border);border-radius:var(--radius);color:var(--white);font-family:var(--font-mono);font-size:1rem;letter-spacing:0.15em;padding:13px 16px;text-align:center;outline:none;margin-bottom:14px}
-#lock-btn{width:100%;background:linear-gradient(135deg,var(--steel) 0%,var(--steel-lite) 100%);border:none;border-radius:var(--radius);color:#fff;cursor:pointer;font-size:0.85rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:13px}
-#lock-error{color:#ff7b7b;font-size:0.82rem;margin-top:12px;min-height:18px}
-.lock-footer{margin-top:28px;font-size:11px;color:rgba(138,172,200,0.5)}
-#site{display:none}#site.visible{display:block;animation:fadeIn 0.5s ease both}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-header{background:linear-gradient(180deg,#0a1628 0%,var(--navy) 100%);border-bottom:1px solid var(--border);padding:0;position:sticky;top:0;z-index:100}
-.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;gap:16px}
-.header-brand{display:flex;align-items:center;gap:14px}
-.brand-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--steel) 0%,var(--navy-lite) 100%);border:1px solid rgba(61,135,197,0.4);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brand-mark svg{width:22px;height:22px}
-.brand-name{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:0.04em}
-.brand-tagline{font-size:10.5px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase}
-nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius);transition:color 0.2s,background 0.2s;white-space:nowrap}
-nav a:hover{color:var(--white);background:rgba(255,255,255,0.06)}
-.hero{background:linear-gradient(170deg,rgba(22,40,71,0.95) 0%,rgba(13,31,60,0.98) 100%);border-bottom:1px solid var(--border);padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden}
-.hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sky);margin-bottom:16px}
-.hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.4rem);font-weight:700;color:var(--white);letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px}
-.hero h1 span{color:var(--sky)}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:580px;margin:0 auto 40px}
-.hero-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(46,109,164,0.15);border:1px solid rgba(46,109,164,0.3);border-radius:24px;padding:6px 14px;font-size:11.5px;color:var(--sky)}
-main{max-width:1100px;margin:0 auto;padding:56px 32px 80px}
-section{margin-bottom:64px}
-.section-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
-.section-title{font-family:var(--font-head);font-size:1.75rem;font-weight:700;color:var(--white);margin-bottom:8px}
-.section-intro{color:var(--muted);font-size:0.95rem;max-width:680px;margin-bottom:36px}
-.card{background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:border-color 0.25s,box-shadow 0.25s,transform 0.2s}
-.card:hover{border-color:rgba(61,135,197,0.35);box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.3rem}
-.card-title{font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:10px}
-.card p{font-size:0.88rem;color:var(--muted);line-height:1.65}
-.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.pillar{background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.2s,box-shadow 0.25s}
-.pillar:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--pillar-color,var(--steel))}
-.pillar-num{font-family:var(--font-head);font-size:3.5rem;font-weight:700;line-height:1;color:var(--pillar-color,var(--steel));opacity:0.2;margin-bottom:-10px}
-.pillar-title{font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:12px}
-.pillar p{font-size:0.87rem;color:var(--muted);line-height:1.65}
-.pillar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.tag{font-size:10.5px;letter-spacing:0.06em;padding:3px 9px;border-radius:3px;background:rgba(46,109,164,0.15);border:1px solid rgba(46,109,164,0.2);color:var(--sky);text-transform:uppercase}
-.phases{display:flex;flex-direction:column}
-.phase{display:grid;grid-template-columns:120px 32px 1fr;gap:0 20px;padding-bottom:36px}
-.phase:last-child{padding-bottom:0}
-.phase-date{text-align:right;padding-top:4px;font-size:11.5px;font-family:var(--font-mono);color:var(--steel-lite)}
-.phase-spine{display:flex;flex-direction:column;align-items:center}
-.phase-dot{width:12px;height:12px;border-radius:50%;background:var(--steel);border:2px solid var(--steel-lite);flex-shrink:0;margin-top:4px;box-shadow:0 0 8px rgba(61,135,197,0.4)}
-.phase-line{flex:1;width:1px;background:linear-gradient(180deg,var(--border),transparent);margin-top:6px}
-.phase:last-child .phase-line{display:none}
-.phase-name{font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px}
-.phase p,.phase ul{font-size:0.87rem;color:var(--muted)}
-.phase ul{margin:10px 0 0 16px}
-.phase ul li{margin-bottom:4px}
-.form-card{background:rgba(22,40,71,0.8);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-md)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
-.form-group{display:flex;flex-direction:column;gap:7px}
-.form-group.full{grid-column:1/-1}
-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel-lite);font-weight:600}
-input[type="text"],select,textarea{background:rgba(13,31,60,0.7);border:1px solid var(--border);border-radius:var(--radius);color:var(--white);font-family:var(--font-body);font-size:14px;padding:11px 14px;outline:none;width:100%;transition:border-color 0.2s}
-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%238aacc8' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:32px}
-textarea{resize:vertical;min-height:90px}
-input:focus,select:focus,textarea:focus{border-color:var(--steel-lite);box-shadow:0 0 0 3px rgba(61,135,197,0.12)}
-input::placeholder,textarea::placeholder{color:rgba(138,172,200,0.4)}
-.rating-group{display:flex;gap:8px;align-items:center}
-.rating-btn{width:36px;height:36px;border-radius:var(--radius);background:rgba(13,31,60,0.7);border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:13px;font-weight:600;transition:all 0.15s;display:flex;align-items:center;justify-content:center}
-.rating-btn:hover,.rating-btn.active{background:var(--steel);border-color:var(--steel-lite);color:#fff}
-.submit-row{margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,var(--steel) 0%,var(--steel-lite) 100%);border:none;border-radius:var(--radius);color:#fff;cursor:pointer;font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:13px 32px;box-shadow:0 3px 12px rgba(46,109,164,0.35)}
-#form-status{font-size:13px;color:var(--success);display:none;align-items:center;gap:8px}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.ref-table{width:100%;border-collapse:collapse;font-size:0.87rem}
-.ref-table th{text-align:left;padding:10px 14px;background:rgba(13,31,60,0.7);border-bottom:1px solid var(--border);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel-lite);font-weight:600}
-.ref-table td{padding:11px 14px;border-bottom:1px solid rgba(100,160,220,0.08);color:var(--muted);vertical-align:top}
-.ref-table td:first-child{color:var(--white);font-weight:600}
-.ref-table tr:last-child td{border-bottom:none}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:36px}
-.stat{background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;text-align:center}
-.stat-val{font-family:var(--font-head);font-size:2.2rem;font-weight:700;color:var(--sky);line-height:1.1;margin-bottom:4px}
-.stat-label{font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
-.callout{background:rgba(46,109,164,0.1);border:1px solid rgba(46,109,164,0.25);border-left:3px solid var(--steel);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;font-size:0.88rem;color:var(--muted);margin-bottom:28px}
-.callout strong{color:var(--white)}
-footer{background:rgba(10,22,40,0.8);border-top:1px solid var(--border);padding:28px 32px;text-align:center}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-name{font-family:var(--font-head);font-size:1.1rem;color:var(--white);margin-bottom:6px;letter-spacing:0.06em}
-.footer-meta{font-size:11px;color:rgba(138,172,200,0.45);letter-spacing:0.06em}
-.tab-nav{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--border);overflow-x:auto}
-.tab-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-family:var(--font-body);font-size:12.5px;letter-spacing:0.07em;text-transform:uppercase;padding:10px 16px;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;white-space:nowrap}
-.tab-btn.active{color:var(--sky);border-bottom-color:var(--steel)}
-.tab-panel{display:none}.tab-panel.active{display:block}
-@media(max-width:768px){.header-inner{padding:14px 18px}nav{display:none}main{padding:36px 18px 60px}.hero{padding:48px 18px 42px}.form-card{padding:24px 18px}.phase{grid-template-columns:80px 28px 1fr;gap:0 12px}}
-</style></head><body>
-<div id="lock-screen"><div class="lock-card"><div class="lock-logo">Royal North Shore Hospital</div><div class="lock-title">SYDCAG</div><div class="lock-subtitle">Sydney Complex Aortic Group</div><div class="lock-divider"></div><input type="password" id="pw-input" placeholder="Enter access code" autocomplete="off"/><button id="lock-btn" onclick="unlock()">Enter Programme Hub</button><div id="lock-error"></div><div class="lock-footer">Restricted — Invited Participants Only</div></div></div>
-<div id="site">
-<header><div class="header-inner"><div class="header-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C8 3 5 6.5 5 10.5C5 15 9 19 12 21C15 19 19 15 19 10.5C19 6.5 16 3 12 3Z" stroke="#6aaed6" stroke-width="1.5" fill="none"/><path d="M12 7V14M9 10.5H15" stroke="#4fc3f7" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="brand-text"><div class="brand-name">SYDCAG</div><div class="brand-tagline">Sydney Complex Aortic Group · RNSH</div></div></div><nav><a href="#about">About</a><a href="#pillars">Framework</a><a href="#roadmap">Roadmap</a><a href="#reference">Clinical Ref</a><a href="#input">Your Input</a></nav></div></header>
-<div class="hero"><div class="hero-eyebrow">Founding Dinner · Programme Hub</div><h1>Sydney Complex<br><span>Aortic Group</span></h1><p class="hero-sub">A proposed multidisciplinary aortic programme at Royal North Shore Hospital — consolidating expertise, standardising care pathways, and building a platform for research and education across the Sydney North Health Network.</p><div class="hero-badges"><span class="badge">Multidisciplinary Team</span><span class="badge">RNSH · SNHN</span><span class="badge">Complex Aortic Disease</span><span class="badge">Type A &amp; B Dissection</span><span class="badge">EVAR · TEVAR · FEVAR</span></div></div>
-<main>
-<section id="about"><div class="section-label">Background</div><h2 class="section-title">Why Now?</h2><p class="section-intro">Complex aortic pathology requires coordinated input across vascular surgery, cardiothoracic surgery, interventional radiology, anaesthesia, and intensive care. The evidence base increasingly supports a structured multidisciplinary approach for both outcomes and institutional capability.</p><div class="stats"><div class="stat"><div class="stat-val">~150</div><div class="stat-label">Aortic procedures annually at RNSH</div></div><div class="stat"><div class="stat-val">4+</div><div class="stat-label">Surgical &amp; procedural specialties involved</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-label">Proposed programme pillars</div></div><div class="stat"><div class="stat-val">12 mo</div><div class="stat-label">Target to first formal MDT</div></div></div><div class="callout"><strong>Analogue institution:</strong> The Calgary Aortic Program (Alberta Health Services) represents the closest structural model — a formalised, phased MDT programme built within an existing tertiary vascular and cardiothoracic centre.</div><div class="info-grid"><div class="card"><div class="card-icon" style="background:rgba(46,109,164,0.15)">🏥</div><div class="card-title">Institutional Readiness</div><p>RNSH has the subspecialty footprint, case volume, and physical infrastructure to support a formalised aortic programme. The missing element is structured coordination — not capability.</p></div><div class="card"><div class="card-icon" style="background:rgba(79,195,247,0.12)">📊</div><div class="card-title">Evidence Base</div><p>Contemporary literature, including IRAD registry data and international consensus guidelines, consistently supports multidisciplinary aortic teams for improved decision-making and long-term surveillance adherence.</p></div><div class="card"><div class="card-icon" style="background:rgba(106,174,214,0.12)">🔬</div><div class="card-title">Research Platform</div><p>A formalised programme creates the infrastructure for prospective data collection, registry participation, and investigator-initiated or collaborative trials.</p></div></div></section>
-<section id="pillars"><div class="section-label">Programme Architecture</div><h2 class="section-title">Three-Pillar Framework</h2><p class="section-intro">SYDCAG is proposed around three interlocking pillars — each addressable independently but designed to function as a coherent system of care.</p><div class="pillars"><div class="pillar" style="--pillar-color:#3d87c5"><div class="pillar-num">01</div><div class="pillar-title">Multidisciplinary Aortic Team</div><p>A structured MDT meeting — initially monthly, then fortnightly — to review complex elective cases, discuss imaging, align operative planning across specialties, and ensure consensus-based decision-making for high-risk patients.</p><div class="pillar-tags"><span class="tag">Monthly MDT</span><span class="tag">Cross-specialty</span><span class="tag">Case review</span></div></div><div class="pillar" style="--pillar-color:#6aaed6"><div class="pillar-num">02</div><div class="pillar-title">Acute Aortic Pathway</div><p>Standardised protocol for acute aortic syndromes — Type A and Type B dissection, intramural haematoma, penetrating aortic ulcer — covering activation, imaging, escalation criteria, ICU liaison, and operative/endovascular decision thresholds.</p><div class="pillar-tags"><span class="tag">Type A/B</span><span class="tag">IMH · PAU</span><span class="tag">TEVAR criteria</span></div></div><div class="pillar" style="--pillar-color:#4fc3f7"><div class="pillar-num">03</div><div class="pillar-title">Longitudinal Care &amp; Registry</div><p>Structured follow-up — imaging surveillance timelines, medical optimisation, genetic screening referral pathways, and prospective data capture feeding a local registry and potential national linkage.</p><div class="pillar-tags"><span class="tag">Surveillance</span><span class="tag">Registry</span><span class="tag">Medical Rx</span></div></div></div></section>
-<section id="roadmap"><div class="section-label">Implementation</div><h2 class="section-title">Proposed Roadmap</h2><p class="section-intro">A phased approach — building consensus before infrastructure, and infrastructure before formal governance.</p><div class="phases"><div class="phase"><div class="phase-date">Q2 2026</div><div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div><div class="phase-content"><div class="phase-name">Foundation &amp; Consensus</div><p>Inaugural dinner — establishing shared purpose, identifying key stakeholders, agreeing on scope. Tonight.</p><ul><li>Identify specialty leads (VS, CTS, IR, Anaes, ICU)</li><li>Agree on programme name and scope</li><li>Confirm initial meeting cadence</li></ul></div></div><div class="phase"><div class="phase-date">Q3 2026</div><div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div><div class="phase-content"><div class="phase-name">Pilot MDT Launch</div><p>First formal SYDCAG MDT meeting. Monthly cadence, elective complex cases only.</p><ul><li>Monthly MDT — 1st or 2nd Thursday</li><li>Referral template distributed to all services</li><li>Pilot data collection commenced</li></ul></div></div><div class="phase"><div class="phase-date">Q4 2026</div><div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div><div class="phase-content"><div class="phase-name">Acute Pathway Formalisation</div><p>Draft and circulate acute aortic syndrome protocol. Review existing pathways at RNSH and identify gaps.</p><ul><li>Pathway document — version 1.0</li><li>Type B dissection management algorithm</li><li>14-day threshold guidance</li></ul></div></div><div class="phase"><div class="phase-date">H1 2027</div><div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div><div class="phase-content"><div class="phase-name">Registry &amp; Research Infrastructure</div><p>Establish prospective local registry. Define data dictionary. Explore REDCap implementation.</p><ul><li>Ethics application for registry</li><li>REDCap / data platform selection</li><li>Linkage to IRAD, ACVQ, or national datasets</li></ul></div></div><div class="phase"><div class="phase-date">2027–28</div><div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div><div class="phase-content"><div class="phase-name">Formal Programme Recognition</div><p>Seek institutional endorsement from RNSH / SNHN. Develop education and training programme. Consider application for Thoracic Aortic Centre of Excellence designation.</p></div></div></div></section>
-<section id="reference"><div class="section-label">Clinical Reference</div><h2 class="section-title">Key Concepts &amp; Thresholds</h2><p class="section-intro">Reference material for discussion — including the evidence and controversy around current management thresholds in acute aortic disease.</p><div class="tab-nav"><button class="tab-btn active" onclick="showTab('tab-dissection',this)">Type B Dissection</button><button class="tab-btn" onclick="showTab('tab-definitions',this)">Definitions</button><button class="tab-btn" onclick="showTab('tab-indications',this)">TEVAR Indications</button></div><div id="tab-dissection" class="tab-panel active"><div class="callout"><strong>The 14-day threshold:</strong> Current classification of Type B dissection as "acute" (&lt;14 days) vs "subacute/chronic" (≥14 days) is a <em>convention</em>, not a validated therapeutic cutoff. The biological transition is continuous and does not reset at day 14.</div><table class="ref-table"><thead><tr><th>Phase</th><th>Timeframe</th><th>Biological Context</th><th>Clinical Implication</th></tr></thead><tbody><tr><td>Hyperacute</td><td>0–24 h</td><td>Active propagation risk; maximal malperfusion risk</td><td>Medical stabilisation; TEVAR if complicated</td></tr><tr><td>Acute</td><td>1–14 d</td><td>Fragile intima; false lumen patent; remodelling not established</td><td>Optimal TEVAR window for uncomplicated high-risk anatomy</td></tr><tr><td>Subacute</td><td>14–90 d</td><td>Early remodelling; intima stabilising; wall still compliant</td><td>TEVAR technically feasible; debate on optimal timing</td></tr><tr><td>Chronic</td><td>&gt;90 d</td><td>Established remodelling; fibrosis; progressive dilatation risk</td><td>TEVAR for enlargement or malperfusion</td></tr></tbody></table></div><div id="tab-definitions" class="tab-panel"><table class="ref-table"><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody><tr><td>Acute Aortic Syndrome</td><td>Umbrella term for Type A dissection, Type B dissection, intramural haematoma (IMH), and penetrating aortic ulcer (PAU)</td></tr><tr><td>Uncomplicated Type B</td><td>No malperfusion, no rapid expansion, no refractory pain, no haemodynamic instability, no rupture</td></tr><tr><td>Complicated Type B</td><td>Malperfusion, rupture, haemodynamic instability, refractory pain/hypertension, rapid expansion</td></tr><tr><td>TEVAR</td><td>Thoracic endovascular aortic repair — stent-graft coverage of descending thoracic aorta to exclude false lumen entry tear</td></tr><tr><td>FEVAR / BEVAR</td><td>Fenestrated / branched endovascular aortic repair — for juxtarenal or thoracoabdominal aneurysms</td></tr><tr><td>SINE</td><td>Stent-graft-induced new entry — iatrogenic dissection at stent-graft margin</td></tr></tbody></table></div><div id="tab-indications" class="tab-panel"><table class="ref-table"><thead><tr><th>Indication</th><th>Evidence Level</th><th>Notes</th></tr></thead><tbody><tr><td>Complicated acute Type B</td><td>Class I — strong</td><td>Immediate TEVAR; fenestration if malperfusion persists</td></tr><tr><td>Uncomplicated Type B — high-risk anatomy</td><td>Class IIa — moderate</td><td>ADSORB, INSTEAD-XL data; benefit over 5 years</td></tr><tr><td>Uncomplicated Type B — standard anatomy</td><td>Class IIb — evolving</td><td>Optimal medical therapy remains standard</td></tr><tr><td>Descending thoracic aneurysm ≥55 mm / ≥50 mm</td><td>Class I</td><td>Diameter thresholds; morphology and growth rate also considered</td></tr><tr><td>Pseudoaneurysm / traumatic transection</td><td>Class I</td><td>TEVAR preferred over open in suitable anatomy</td></tr></tbody></table></div></section>
-<section id="input"><div class="section-label">Participant Input</div><h2 class="section-title">Your Views</h2><p class="section-intro">This brief form captures your perspective ahead of — or following — tonight's discussion. All responses are confidential within the group.</p><div class="form-card"><div class="form-grid"><div class="form-group"><label for="f-name">Name</label><input type="text" id="f-name" placeholder="Your name"/></div><div class="form-group"><label for="f-specialty">Specialty / Role</label><select id="f-specialty"><option value="">— Select —</option><option>Vascular Surgery</option><option>Cardiothoracic Surgery</option><option>Interventional Radiology</option><option>Anaesthesia</option><option>Intensive Care</option><option>Cardiology</option><option>Emergency Medicine</option><option>Radiology</option><option>Other</option></select></div><div class="form-group full"><label>Support for a formalised SYDCAG programme</label><div class="rating-group"><span style="font-size:11px;color:var(--muted);margin-right:4px">Low</span><button class="rating-btn" onclick="rate('support',1,this)">1</button><button class="rating-btn" onclick="rate('support',2,this)">2</button><button class="rating-btn" onclick="rate('support',3,this)">3</button><button class="rating-btn" onclick="rate('support',4,this)">4</button><button class="rating-btn" onclick="rate('support',5,this)">5</button><span style="font-size:11px;color:var(--muted);margin-left:4px">High</span></div></div><div class="form-group full"><label>Priority pillar for early focus</label><select id="f-pillar"><option value="">— Select —</option><option>Pillar 1 — MDT Meeting</option><option>Pillar 2 — Acute Pathway</option><option>Pillar 3 — Registry &amp; Follow-up</option><option>All equally — build in parallel</option></select></div><div class="form-group full"><label for="f-barrier">Biggest anticipated barrier</label><textarea id="f-barrier" placeholder="e.g. Theatre scheduling, cross-specialty buy-in, resource constraints…"></textarea></div><div class="form-group full"><label for="f-contribution">How you could contribute to SYDCAG</label><textarea id="f-contribution" placeholder="e.g. MDT attendance, pathway drafting, research involvement…"></textarea></div><div class="form-group full"><label for="f-other">Any other comments</label><textarea id="f-other" placeholder="Open field…"></textarea></div></div><div class="submit-row"><button class="btn-primary" onclick="submitForm()">Submit Response</button><div id="form-status">✓ Response submitted — thank you</div></div></div></section>
-</main>
-<footer><div class="footer-inner"><div class="footer-name">SYDCAG · Sydney Complex Aortic Group</div><div class="footer-meta">Royal North Shore Hospital · Vascular Surgery Research Department · Sydney North Health Network<br>Dr S.A. Saavedra Fernández — Fellowship &amp; Research · Dr V. Puttaswamy — Head of Department</div></div></footer>
+<title>SYDCAG — Sydney Complex Aortic Group</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── PASSWORD GATE ─────────────────────────────────────────────────── -->
+<div id="gate">
+  <div class="gate-inner">
+    <div class="gate-wordmark">SYDCAG</div>
+    <div class="gate-sub">Sydney Complex Aortic Group</div>
+    <div class="gate-rule"></div>
+    <p class="gate-prompt">This site is for invited participants only.<br>Please enter the access code.</p>
+    <div class="gate-field-wrap">
+      <input id="pw-input" type="password" placeholder="Access code" autocomplete="off" spellcheck="false">
+      <button id="pw-btn" onclick="checkPassword()">Enter</button>
+    </div>
+    <p id="pw-error" class="gate-error" style="display:none;">Incorrect code. Please check your invitation.</p>
+    <p class="gate-footer">Royal North Shore Hospital · Department of Vascular Surgery · 2026</p>
+  </div>
 </div>
-<script>
-const PASSWORD='SYDCAG2026';
-document.getElementById('pw-input').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
-function unlock(){const val=document.getElementById('pw-input').value.trim().toUpperCase();if(val===PASSWORD){document.getElementById('lock-screen').style.display='none';const s=document.getElementById('site');s.style.display='block';s.classList.add('visible');}else{const err=document.getElementById('lock-error');err.textContent='Incorrect access code — please try again';document.getElementById('pw-input').value='';document.getElementById('pw-input').focus();setTimeout(()=>{err.textContent='';},3000);}}
-function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
-const ratings={};
-function rate(key,val,el){ratings[key]=val;el.closest('.rating-group').querySelectorAll('.rating-btn').forEach((b,i)=>{b.classList.toggle('active',i<val);});}
-function submitForm(){const name=document.getElementById('f-name').value.trim();if(!name){alert('Please enter your name.');return;}const payload={name,specialty:document.getElementById('f-specialty').value,pillar:document.getElementById('f-pillar').value,support_rating:ratings['support']||'not set',barrier:document.getElementById('f-barrier').value.trim(),contribution:document.getElementById('f-contribution').value.trim(),other_comments:document.getElementById('f-other').value.trim(),_subject:'SYDCAG Input — '+name};fetch('https://formspree.io/f/xyzpbkqr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});const status=document.getElementById('form-status');status.style.display='flex';setTimeout(()=>{status.style.display='none';},5000);}
-</script></body></html>
+
+<!-- ── MAIN SITE ──────────────────────────────────────────────────────── -->
+<div id="site" style="display:none;">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">SYDCAG</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#dinner">The Dinner</a>
+        <a href="#documents">Documents</a>
+        <a href="#input">Your Input</a>
+      </div>
+      <div class="nav-burger" onclick="toggleNav()">&#9776;</div>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#about" onclick="toggleNav()">About</a>
+      <a href="#evidence" onclick="toggleNav()">Evidence</a>
+      <a href="#dinner" onclick="toggleNav()">The Dinner</a>
+      <a href="#documents" onclick="toggleNav()">Documents</a>
+      <a href="#input" onclick="toggleNav()">Your Input</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">Royal North Shore Hospital</div>
+      <h1 class="hero-title">SYDCAG</h1>
+      <p class="hero-full">Sydney Complex Aortic Group</p>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Towards a Collaborative Aortic Programme<br>between Vascular Surgery and Cardiothoracic Surgery</p>
+      <div class="hero-chips">
+        <span class="chip chip-blue">Founding Dinner · 12 May 2026</span>
+        <span class="chip chip-teal">Royal North Shore Hospital</span>
+      </div>
+      <a href="#about" class="hero-cta">Learn more ↓</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section-light">
+    <div class="container">
+      <div class="section-label">The Proposal</div>
+      <h2 class="section-title">What is SYDCAG?</h2>
+      <div class="two-col">
+        <div class="prose">
+          <p>SYDCAG — the Sydney Complex Aortic Group — is a proposed collaborative clinical programme between Vascular Surgery and Cardiothoracic Surgery at Royal North Shore Hospital.</p>
+          <p>Its purpose is to deliver structured, jointly governed care for patients with complex thoracic and thoracoabdominal aortic disease: cases that sit at the intersection of both specialties and that benefit most from simultaneous, coordinated expertise.</p>
+          <p>The premise is straightforward. Complex aortic disease does not respect the boundaries that have historically divided our specialties. At RNSH, the capability already exists within both departments. <strong>The gap is not expertise — it is structure.</strong></p>
+        </div>
+        <div class="pillars">
+          <div class="pillar pillar-blue">
+            <div class="pillar-icon">◈</div>
+            <div class="pillar-title">Joint Case Conference</div>
+            <div class="pillar-text">Fortnightly MDT — all complex aortic cases reviewed jointly, decisions documented, outcomes tracked prospectively.</div>
+          </div>
+          <div class="pillar pillar-teal">
+            <div class="pillar-icon">◉</div>
+            <div class="pillar-title">Acute Aortic Response</div>
+            <div class="pillar-text">Code Aorta protocol — single activation, both teams simultaneously, no ambiguity at 2am.</div>
+          </div>
+          <div class="pillar pillar-navy">
+            <div class="pillar-icon">◎</div>
+            <div class="pillar-title">Longitudinal Surveillance</div>
+            <div class="pillar-text">Structured follow-up for post-dissection, post-TEVAR, and heritable aortopathy patients.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section id="evidence" class="section section-dark">
+    <div class="container">
+      <div class="section-label light">The Evidence</div>
+      <h2 class="section-title light">What the literature shows</h2>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">0.31</div>
+          <div class="stat-label">Odds ratio for mortality in centres introducing a formal aortic programme vs their own pre-programme era</div>
+          <div class="stat-source">Mariscalco et al., Eur J Prev Cardiol, 2018 · 79,131 patients · 30 studies · observational</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">91%</div>
+          <div class="stat-label">MDT decision implementation rate over 5 years at the Barts Aortovascular MDT</div>
+          <div class="stat-source">Yates et al., AME Surg J, 2022 · 871 discussions · 649 patients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4×</div>
+          <div class="stat-label">Procedural volume increase at University of Washington following formal MAT implementation</div>
+          <div class="stat-source">Sorber et al., 2025 · single centre · 2018–2022</div>
+        </div>
+      </div>
+      <div class="evidence-notes">
+        <div class="evidence-note">
+          <div class="note-dot note-blue"></div>
+          <div>The 2022 ACC/AHA and 2024 EACTS/STS guidelines both document formal aortic team care as a defined standard — not an aspiration.</div>
+        </div>
+        <div class="evidence-note">
+          <div class="note-dot note-teal"></div>
+          <div>The Calgary Aortic Program — the closest international structural analogue to RNSH — restructured from a siloed two-hospital model in 2019. Referral volume grew from 54 to 221 patients per year within three years.</div>
+        </div>
+        <div class="evidence-note">
+          <div class="note-dot note-grey"></div>
+          <div>All studies cited are observational. Evidence is associational, not causal. The signal is nonetheless consistent and reproducible across independent institutions and countries.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DINNER -->
+  <section id="dinner" class="section section-light">
+    <div class="container">
+      <div class="section-label">The Next Step</div>
+      <h2 class="section-title">The Founding Dinner</h2>
+      <div class="dinner-hero">
+        <div class="dinner-date-block">
+          <div class="dinner-date-label">DATE</div>
+          <div class="dinner-date-num">12</div>
+          <div class="dinner-date-month">MAY 2026</div>
+        </div>
+        <div class="dinner-detail">
+          <p>The founding dinner is the first formal collective step for SYDCAG. Its objectives are not to finalise a governance document or agree a clinical protocol — those come later. Its objectives are:</p>
+          <ul class="dinner-list">
+            <li>Share the evidence framework</li>
+            <li>Hear from both departments — priorities, perspectives, and concerns</li>
+            <li>Identify participants for the post-dinner working group</li>
+            <li>Agree a start date for the fortnightly Joint Case Conference</li>
+            <li>Agree the next meeting date and scope of work</li>
+          </ul>
+          <div class="dinner-note">
+            None of what SYDCAG requires to begin needs significant new resources. It needs agreement, structure, and a shared commitment from both departments.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section id="documents" class="section section-mid">
+    <div class="container">
+      <div class="section-label">Reference Materials</div>
+      <h2 class="section-title">Documents</h2>
+      <p class="section-intro">The following documents provide the background evidence and programme design framework for SYDCAG. Please review the Executive Summary before the dinner.</p>
+      <div class="doc-grid">
+        <div class="doc-card doc-priority">
+          <div class="doc-badge">Start here</div>
+          <div class="doc-icon">▤</div>
+          <div class="doc-title">Executive Summary</div>
+          <div class="doc-desc">A concise overview of the SYDCAG proposal — what it is, the evidence, and what's being proposed. Recommended reading before the dinner.</div>
+          <div class="doc-meta">3 pages · Q&A format</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon">▦</div>
+          <div class="doc-title">Phase 1 Evidence Search Report</div>
+          <div class="doc-desc">A systematic review of international literature on collaborative aortic programmes, governance models, and implementation evidence.</div>
+          <div class="doc-meta">10 pages · Evidence synthesis</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon">▧</div>
+          <div class="doc-title">Structured Implementation Plan</div>
+          <div class="doc-desc">A five-stage operational roadmap from bilateral HoD engagement through to formal programme maturation and six-month review.</div>
+          <div class="doc-meta">9 pages · Operational plan</div>
+        </div>
+      </div>
+      <p class="doc-note">Documents will be attached directly to your dinner invitation email. Contact <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a> if you have not received them.</p>
+    </div>
+  </section>
+
+  <!-- INPUT FORM -->
+  <section id="input" class="section section-dark">
+    <div class="container">
+      <div class="section-label light">Before the Dinner</div>
+      <h2 class="section-title light">Your Input</h2>
+      <p class="section-intro light">We want to hear from you before we're all in the room together. Your questions and suggestions will be collated and used to shape the dinner agenda. All responses are shared with Dr Vikram Puttaswamy and S. Saavedra only.</p>
+
+      <div class="form-wrap">
+        <form id="input-form" action="https://formspree.io/f/sebastian.saavedra@health.nsw.gov.au" method="POST">
+          <input type="hidden" name="_subject" value="SYDCAG Pre-Dinner Input">
+          <input type="hidden" name="_replyto" value="">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" required placeholder="Dr / Prof …">
+            </div>
+            <div class="form-group">
+              <label for="f-dept">Department <span class="req">*</span></label>
+              <select id="f-dept" name="department" required>
+                <option value="" disabled selected>Select department</option>
+                <option>Vascular Surgery</option>
+                <option>Cardiothoracic Surgery</option>
+                <option>Cardiology</option>
+                <option>Interventional Radiology</option>
+                <option>Anaesthesia</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-role">Role</label>
+            <select id="f-role" name="role">
+              <option value="" disabled selected>Select role</option>
+              <option>Consultant</option>
+              <option>Fellow</option>
+              <option>Registrar</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-cases">What case types do you encounter most frequently where input from the other specialty would be clinically valuable? <span class="req">*</span></label>
+            <textarea id="f-cases" name="case_types" rows="3" required placeholder="e.g. Type B dissection with arch involvement, complex TAAA, heritable aortopathy…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-practical">What would make the Joint Case Conference practically workable for you — format, timing, frequency?</label>
+            <textarea id="f-practical" name="practical_considerations" rows="3" placeholder="e.g. Preferred day/time, duration, how cases should be selected…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-concerns">What concerns or barriers do you anticipate, and what would need to be in place to address them?</label>
+            <textarea id="f-concerns" name="concerns" rows="3" placeholder="e.g. Workload, rostering, governance, resource requirements…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-dinner">Is there anything specific you would want discussed or agreed at the founding dinner?</label>
+            <textarea id="f-dinner" name="dinner_agenda" rows="3" placeholder="Your priorities for the evening…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-other">Any other thoughts, questions, or suggestions?</label>
+            <textarea id="f-other" name="other" rows="3" placeholder="Anything else on your mind…"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn">Submit your input →</button>
+          <div id="form-success" class="form-success" style="display:none;">
+            <div class="success-icon">✓</div>
+            <div class="success-title">Thank you.</div>
+            <div class="success-text">Your input has been received and will be reviewed before the dinner. We look forward to seeing you on 12 May.</div>
+          </div>
+          <div id="form-error" class="form-error-msg" style="display:none;">
+            Something went wrong. Please email your input directly to <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">SYDCAG</div>
+      <div class="footer-sub">Sydney Complex Aortic Group · Royal North Shore Hospital · 2026</div>
+      <div class="footer-rule"></div>
+      <div class="footer-contact">
+        Department of Vascular Surgery · RNSH ·
+        <a href="mailto:sebastian.saavedra@health.nsw.gov.au">sebastian.saavedra@health.nsw.gov.au</a>
+      </div>
+      <div class="footer-disc">This site is for invited participants only. It does not contain patient-identifiable information. All submissions are received by the SYDCAG programme team.</div>
+    </div>
+  </footer>
+
+</div><!-- /site -->
+
+<script src="app.js"></script>
+</body>
+</html>
