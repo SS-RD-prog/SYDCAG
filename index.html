@@ -195,15 +195,12 @@
   }
 
   .brand-mark {
-    width: 40px; height: 40px;
-    background: linear-gradient(135deg, var(--steel) 0%, var(--navy-lite) 100%);
-    border: 1px solid rgba(61,135,197,0.4);
-    border-radius: 8px;
+    width: 48px; height: 48px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
 
-  .brand-mark svg { width: 22px; height: 22px; }
+  .brand-mark img { width: 48px; height: 48px; object-fit: contain; }
 
   .brand-text { line-height: 1.2; }
   .brand-name {
@@ -703,10 +700,7 @@
     <div class="header-inner">
       <div class="header-brand">
         <div class="brand-mark">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3C8 3 5 6.5 5 10.5C5 15 9 19 12 21C15 19 19 15 19 10.5C19 6.5 16 3 12 3Z" stroke="#6aaed6" stroke-width="1.5" fill="none"/>
-            <path d="M12 7V14M9 10.5H15" stroke="#4fc3f7" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <img src="data:image/png;base64,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" alt="SYDCAG Logo" />
         </div>
         <div class="brand-text">
           <div class="brand-name">SYDCAG</div>
@@ -728,13 +722,14 @@
   <div class="hero">
     <div class="hero-eyebrow">Founding Dinner · Programme Hub</div>
     <h1>Sydney Complex<br><span>Aortic Group</span></h1>
-    <p class="hero-sub">A proposed multidisciplinary aortic programme at Royal North Shore Hospital — consolidating expertise, standardising care pathways, and building a platform for research and education across the Sydney North Health Network.</p>
+    <p class="hero-sub">A proposed multidisciplinary aortic programme at Royal North Shore Hospital — consolidating expertise, standardising care pathways, and building a platform for research and education across the Northern Sydney Local Health District.</p>
     <div class="hero-badges">
       <span class="badge">Multidisciplinary Team</span>
-      <span class="badge">RNSH · SNHN</span>
+      <span class="badge">RNSH · NSLHD</span>
       <span class="badge">Complex Aortic Disease</span>
-      <span class="badge">Type A &amp; B Dissection</span>
-      <span class="badge">EVAR · TEVAR · FEVAR</span>
+      <span class="badge">Open Ascending and Arch Work</span>
+      <span class="badge">Hybrid Surgery</span>
+      <span class="badge">Advanced Endovascular Arch and Descending Aortic Work</span>
     </div>
   </div>
 
@@ -742,31 +737,43 @@
 
     <!-- ══ ABOUT ══════════════════════════════════════════════ -->
     <section id="about">
+
+      <!-- WHY SYDCAG -->
+      <div class="section-label">About the Name</div>
+      <h2 class="section-title">Why SYDCAG, not RNSCAG?</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px">
+        <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-left:3px solid var(--steel);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:22px 28px">
+          <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:8px">Sydney</div>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7">The name reflects both the local foundation and the broader collaborative ambition of the programme. The initial focus is to formalise a structured approach to complex aortic care at Royal North Shore Hospital, supporting its role as a specialised hub within the Northern Sydney Local Health District. Beyond this local foundation, the "Sydney" component reflects an aspiration to create a collaborative forum with other experienced cardiovascular surgical teams across Sydney, centred on shared expertise, selected case discussion, academic exchange, and future research partnerships.</p>
+        </div>
+        <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-left:3px solid var(--steel-lite);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:22px 28px">
+          <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:8px">Complex</div>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7">Because this is not intended to encompass all aortic work. The focus is on selected high-complexity cases requiring coordinated input from both vascular and cardiac surgery, supported by appropriate infrastructure, logistics, and resource allocation.</p>
+        </div>
+        <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-left:3px solid var(--sky);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:22px 28px">
+          <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:8px">Aortic Group</div>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7">Because this is not yet a centre or institute. "Group" reflects the current stage of development while allowing the programme to mature and scale over time.</p>
+        </div>
+      </div>
+
+      <!-- BACKGROUND / WHY NOW -->
       <div class="section-label">Background</div>
       <h2 class="section-title">Why Now?</h2>
-      <p class="section-intro">Complex aortic pathology requires coordinated input across vascular surgery, cardiothoracic surgery, anaesthesia, and intensive care. The evidence base increasingly supports a structured multidisciplinary approach for both outcomes and institutional capability.</p>
+      <p class="section-intro">Royal North Shore Hospital already has the surgical expertise, the case volume, and the infrastructure. What it currently lacks is a formalised structure that brings these elements together consistently. Internationally, the shift toward dedicated aortic teams has accelerated — driven by guideline mandates, volume–outcome data, and the recognition that no single specialty commands the full breadth of complex aortic care alone. The gap between what RNSH can offer informally and what a structured programme would deliver systematically is the opportunity SYDCAG is designed to close.</p>
 
       <div class="stats">
         <div class="stat">
           <div class="stat-val">~150</div>
-          <div class="stat-label">Aortic procedures annually at RNSH</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">4+</div>
-          <div class="stat-label">Surgical & procedural specialties involved</div>
+          <div class="stat-label">Aortic procedures annually at RNSH Campus</div>
         </div>
         <div class="stat">
           <div class="stat-val">3</div>
           <div class="stat-label">Proposed programme pillars</div>
         </div>
         <div class="stat">
-          <div class="stat-val">12 mo</div>
+          <div class="stat-val">~2 mo</div>
           <div class="stat-label">Target to first formal MDT</div>
         </div>
-      </div>
-
-      <div class="callout">
-        <strong>Analogue institution:</strong> The Calgary Aortic Program (Alberta Health Services) represents the closest structural model — a formalised, phased MDT programme built within an existing tertiary vascular and cardiothoracic centre, with demonstrable improvements in case volume, outcomes data collection, and inter-specialty referral.
       </div>
 
       <div class="info-grid">
@@ -783,7 +790,7 @@
         <div class="card">
           <div class="card-icon" style="background: rgba(106,174,214,0.12);">🔬</div>
           <div class="card-title">Research Platform</div>
-          <p>A formalised programme creates the infrastructure for prospective data collection, registry participation, and investigator-initiated or collaborative trials — building on existing departmental research activity.</p>
+          <p>A formalised programme, along with the infrastructure for prospective data collection, registry participation, and investigator-initiated or collaborative trials, has the potential to build on existing departmental research activity — aiming at advancing the field.</p>
         </div>
       </div>
     </section>
@@ -792,39 +799,41 @@
     <section id="pillars">
       <div class="section-label">Programme Architecture</div>
       <h2 class="section-title">Three-Pillar Framework</h2>
-      <p class="section-intro">SYDCAG is proposed around three interlocking pillars — each addressable independently but designed to function as a coherent system of care.</p>
+      <p class="section-intro">SYDCAG is proposed, in its initial stage, around three interlocking pillars — each addressable independently but designed to function as a coherent system of care.</p>
 
       <div class="pillars">
         <div class="pillar" style="--pillar-color: #3d87c5;">
           <div class="pillar-num">01</div>
           <div class="pillar-title">Multidisciplinary Aortic Team</div>
-          <p>A structured MDT meeting — initially monthly, then fortnightly — to review complex elective cases, discuss imaging, align operative planning across specialties, and ensure consensus-based decision-making for high-risk patients.</p>
+          <p>A structured MDT meeting — monthly or fortnightly — to review complex elective cases, discuss imaging, align operative planning across specialties, and ensure consensus-based decision-making for high-complexity patients.</p>
           <div class="pillar-tags">
-            <span class="tag">Monthly MDT</span>
+            <span class="tag">Fortnightly/Monthly MDT</span>
             <span class="tag">Cross-specialty</span>
-            <span class="tag">Case review</span>
+            <span class="tag">Case review and decision-making</span>
           </div>
         </div>
 
         <div class="pillar" style="--pillar-color: #6aaed6;">
           <div class="pillar-num">02</div>
           <div class="pillar-title">Acute Aortic Pathway</div>
-          <p>Standardised protocol for acute aortic syndromes — Type A and Type B dissection, intramural haematoma, penetrating aortic ulcer — covering activation, imaging, escalation criteria, ICU liaison, and operative/endovascular decision thresholds.</p>
+          <p>Standardised protocol for joint assessment of acute aortic syndromes and other aortic emergencies meeting criteria; covering activation, imaging, escalation criteria, ICU liaison, and operative/endovascular decision thresholds and operative strategies.</p>
           <div class="pillar-tags">
-            <span class="tag">Type A / B</span>
-            <span class="tag">IMA · PAU</span>
-            <span class="tag">TEVAR criteria</span>
+            <span class="tag">Acute Aortic Response Team</span>
+            <span class="tag">Aortic Emergencies</span>
+            <span class="tag">Team Interdisciplinary Support</span>
+            <span class="tag">Complex Decision-Making</span>
           </div>
         </div>
 
         <div class="pillar" style="--pillar-color: #4fc3f7;">
           <div class="pillar-num">03</div>
           <div class="pillar-title">Longitudinal Care &amp; Registry</div>
-          <p>Structured follow-up for patients after aortic intervention — including imaging surveillance timelines, medical optimisation, genetic screening referral pathways, and prospective data capture feeding a local registry and potential national linkage.</p>
+          <p>Structured follow-up for patients after complex aortic disease diagnosis, with or without intervention — including imaging surveillance timelines, medical optimisation, genetic screening referral pathways, and prospective data capture feeding a local registry and potential national linkage.</p>
           <div class="pillar-tags">
             <span class="tag">Surveillance</span>
+            <span class="tag">Natural History</span>
+            <span class="tag">High-Risk Features</span>
             <span class="tag">Registry</span>
-            <span class="tag">Medical Rx</span>
           </div>
         </div>
       </div>
@@ -834,7 +843,7 @@
     <section id="roadmap">
       <div class="section-label">Implementation</div>
       <h2 class="section-title">Proposed Roadmap</h2>
-      <p class="section-intro">A phased approach — building consensus before infrastructure, and infrastructure before formal governance — to reduce friction and demonstrate value at each step.</p>
+      <p class="section-intro">A phased approach — building consensus before infrastructure, and infrastructure before formal governance — to anticipate challenges and secure value at each step. Real timeframe to be defined as per consensus.</p>
 
       <div class="phases">
         <div class="phase">
@@ -842,11 +851,12 @@
           <div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div>
           <div class="phase-content">
             <div class="phase-name">Foundation &amp; Consensus</div>
-            <p>Inaugural dinner — establishing shared purpose, identifying key stakeholders, agreeing on scope and governance principles. Tonight.</p>
+            <p>Inaugural dinner — establishing shared purpose, identifying key stakeholders, agreeing on scope and governance principles. Founding specialties: CTS &amp; VS.</p>
             <ul>
-              <li>Identify specialty leads (VS, CTS, Anaes, ICU)</li>
-              <li>Agree on programme name and scope</li>
-              <li>Confirm initial meeting cadence</li>
+              <li>Agree on programme execution, name, scope, and planning</li>
+              <li>Define structure, participants, cadence, and pilot launch planning for Elective MDT and Acute Aortic Response Team</li>
+              <li>Forum on prospective registry development</li>
+              <li>Ethics &amp; Governance registry</li>
             </ul>
           </div>
         </div>
@@ -856,11 +866,14 @@
           <div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div>
           <div class="phase-content">
             <div class="phase-name">Pilot MDT Launch</div>
-            <p>First formal SYDCAG MDT meeting. Monthly cadence, elective complex cases only. Develop case referral template and meeting structure.</p>
+            <p>First formal SYDCAG MDT meeting. Monthly/Fortnightly cadence, elective complex cases only. Final version for case referral template and meeting structure.</p>
             <ul>
-              <li>Monthly MDT — 1st or 2nd Thursday</li>
+              <li>Monthly/Fortnightly MDT — locking day and time</li>
               <li>Referral template distributed to all services</li>
               <li>Pilot data collection commenced</li>
+              <li>Launch of Acute Pathway Pilot programme with final structure agreement and circulation</li>
+              <li>Review existing pathways at RNSH and identify gaps. Seek ICU and ED engagement.</li>
+              <li>Prospective Registry Project for Ethics and Governance</li>
             </ul>
           </div>
         </div>
@@ -869,26 +882,12 @@
           <div class="phase-date">Q4 2026</div>
           <div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div>
           <div class="phase-content">
-            <div class="phase-name">Acute Pathway Formalisation</div>
-            <p>Draft and circulate acute aortic syndrome protocol. Review existing pathways at RNSH and identify gaps. Seek ICU and ED engagement.</p>
+            <div class="phase-name">Acute Aortic Pathway and Elective MDT Assessment, Update, and Formalisation</div>
             <ul>
-              <li>Pathway document — version 1.0</li>
-              <li>Type B dissection management algorithm</li>
-              <li>14-day threshold guidance (see Clinical Ref)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="phase">
-          <div class="phase-date">H1 2027</div>
-          <div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div>
-          <div class="phase-content">
-            <div class="phase-name">Registry &amp; Research Infrastructure</div>
-            <p>Establish prospective local registry. Define data dictionary. Explore REDCap implementation via NHMRC or institutional support. Consider international linkage.</p>
-            <ul>
-              <li>Ethics application for registry</li>
-              <li>REDCap / data platform selection</li>
-              <li>Linkage to IRAD, ACVQ, or national datasets</li>
+              <li>Acute Pathway document — final version</li>
+              <li>MDT Adjustment</li>
+              <li>Local Aortic Dissection management guidelines and algorithms</li>
+              <li>Registry &amp; Research Infrastructure formally running</li>
             </ul>
           </div>
         </div>
@@ -898,97 +897,187 @@
           <div class="phase-spine"><div class="phase-dot"></div><div class="phase-line"></div></div>
           <div class="phase-content">
             <div class="phase-name">Formal Programme Recognition</div>
-            <p>Seek institutional endorsement from RNSH / SNHN. Develop education and training programme. Consider application for Thoracic Aortic Centre of Excellence designation.</p>
+            <p>Seek institutional endorsement from RNSH / NSLHD. Academic collaborations and development of education and training programme. Consider application for Aortic Centre of Excellence designation.</p>
           </div>
         </div>
       </div>
     </section>
 
+
     <!-- ══ CLINICAL REFERENCE ════════════════════════════════ -->
     <section id="reference">
       <div class="section-label">Clinical Reference</div>
-      <h2 class="section-title">Key Concepts &amp; Thresholds</h2>
-      <p class="section-intro">Reference material for discussion — including the evidence and controversy around current management thresholds in acute aortic disease.</p>
+      <h2 class="section-title">SYDCAG Clinical Reference — Key Concepts &amp; Thresholds</h2>
+      <p class="section-intro">For the SYDCAG programme hub · Royal North Shore Hospital · 2026. Data summary of relevant current information to May 2026.</p>
 
       <div class="tab-nav">
-        <button class="tab-btn active" onclick="showTab('tab-dissection', this)">Type B Dissection</button>
-        <button class="tab-btn" onclick="showTab('tab-definitions', this)">Definitions</button>
-        <button class="tab-btn" onclick="showTab('tab-indications', this)">TEVAR Indications</button>
+        <button class="tab-btn active" onclick="showTab('tab-guidelines', this)">Guideline Recommendations</button>
+        <button class="tab-btn" onclick="showTab('tab-volume', this)">Volume Thresholds</button>
+        <button class="tab-btn" onclick="showTab('tab-programmes', this)">International Programmes</button>
+        <button class="tab-btn" onclick="showTab('tab-summary', this)">Key Summary</button>
+        <button class="tab-btn" onclick="showTab('tab-dissection', this)">Type B Dissection</button>
       </div>
 
-      <div id="tab-dissection" class="tab-panel active">
+      <!-- GUIDELINES TAB -->
+      <div id="tab-guidelines" class="tab-panel active">
+
+        <div style="margin-bottom:28px">
+          <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px;padding-bottom:8px;border-bottom:1px solid var(--border)">ACC / AHA 2022 — Aortic Disease Guideline <span style="font-size:0.8rem;font-weight:400;color:var(--muted)">(Isselbacher et al., Circulation, 2022)</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="callout" style="margin-bottom:0">Outcomes for patients with aortic disease are enhanced at programmes with higher volumes, experienced practitioners, and extensive management capabilities. The guideline emphasises the importance of institutional interventional volume and multidisciplinary aortic team expertise in determining the appropriate timing of intervention.</div>
+            <div class="callout" style="margin-bottom:0">The most commonly cited features of a Multidisciplinary Aortic Team (MAT) include: cardiac surgical, vascular surgical, and endovascular specialists with extensive experience managing complex aortic disease at a centre with high aortic intervention volume; imaging specialists with expertise in CT, MRI, and echocardiography; anaesthesiologists experienced in the management of acute aortic disease; and intensivists, nurses, and coordinators committed to the longitudinal care of the aortic patient.</div>
+            <div class="callout" style="margin-bottom:0">At centres with Multidisciplinary Aortic Teams and experienced surgeons, the threshold for surgical intervention for sporadic aortic root and ascending aortic aneurysms has been <strong style="color:var(--white)">lowered from 5.5 cm to 5.0 cm</strong> in selected patients. A formally constituted MAT does not only improve process — it changes what is clinically possible.</div>
+            <div class="callout" style="margin-bottom:0">The multidisciplinary aortic team is highly encouraged to involve the patient in decision-making, especially when individuals are on the borderline of thresholds for repair or eligible for different types of surgical repair.</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:28px">
+          <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px;padding-bottom:8px;border-bottom:1px solid var(--border)">EACTS / STS 2024 — Guidelines for Acute and Chronic Syndromes of the Aortic Organ <span style="font-size:0.8rem;font-weight:400;color:var(--muted)">(Czerny et al., 2024)</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="callout" style="margin-bottom:0">Shared decision-making for the optimal treatment of aortic pathologies by a multidisciplinary aortic team is recommended <strong style="color:var(--white)">(Class I, Level C)</strong>. In patients with multisegmental aortic disease, treatment is recommended in aortic centres providing open and endovascular cardiac and vascular surgery on site <strong style="color:var(--white)">(Class I, Level C)</strong>. Transfer to an aortic centre should be considered for patients with complex aortic pathologies <strong style="color:var(--white)">(Class IIa, Level B)</strong>.</div>
+            <div class="callout" style="margin-bottom:0">The guidelines emphasise the importance of forming specialised teams for aortic diseases — recommending joint decisions with an aortic MDT (Class IC), referral of patients with multisegmental or complex aortopathy to specialised centres (Class IIa), and availability of a hybrid operating room for endovascular procedures.</div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px;padding-bottom:8px;border-bottom:1px solid var(--border)">ESVS 2024 — Clinical Practice Guidelines on Abdominal Aortoiliac Artery Aneurysms</div>
+          <div class="callout" style="margin-bottom:0">The ESVS 2024 guidelines set a centre volume recommendation of <strong style="color:var(--white)">≥30 AAA repairs per year</strong> (with at least 15 open and 15 endovascular), and <strong style="color:var(--white)">≥20 complex aneurysm cases per year</strong> (combined open and fenestrated/branched EVAR) at specialised centres.</div>
+        </div>
+      </div>
+
+      <!-- VOLUME THRESHOLDS TAB -->
+      <div id="tab-volume" class="tab-panel">
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:20px">The relationship between volume and outcomes in complex aortic surgery is one of the most consistent findings in the cardiovascular surgical literature.</p>
+
+        <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:12px">Centre-level volume thresholds</div>
+        <table class="ref-table" style="margin-bottom:28px">
+          <thead>
+            <tr><th>Source</th><th>Procedure</th><th>Recommended Minimum</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ACC/AHA 2022</td><td>All complex aortic procedures</td><td>≥30–40 per year (Comprehensive centre)</td></tr>
+            <tr><td>ESVS 2024</td><td>AAA total (open + EVAR)</td><td>≥30 per year (≥15 open, ≥15 EVAR)</td></tr>
+            <tr><td>NHS England</td><td>AAA (all including emergency)</td><td>≥60 per year (target)</td></tr>
+            <tr><td>ESVS 2024</td><td>Complex (F/BEVAR + open TAAA)</td><td>≥20 per year</td></tr>
+            <tr><td>SVS 2018</td><td>Open AAA</td><td>≥10 per year + &lt;5% 30-day mortality</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout" style="margin-bottom:20px"><strong>Note:</strong> No formal published numeric threshold exists for Type A dissection repair, total arch replacement, or open thoracoabdominal repair. Guideline consensus uniformly supports centralisation to high-volume centres with dedicated aortic teams for these procedures.</div>
+
+        <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:12px">The volume–outcome evidence</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="callout" style="margin-bottom:0">A systematic review and meta-analysis of 79,131 patients across 30 observational studies found that patients treated in high-volume centres or by high-volume surgeons were associated with lower mortality rates (OR 0.51, 95% CI 0.46–0.56, and OR 0.41, 95% CI 0.25–0.66, respectively). Patients treated in centres that introduced a specific multidisciplinary aortic programme and a dedicated on-call aortic team also showed a significant reduction in mortality (OR 0.31, 95% CI 0.19–0.51, and OR 0.37, 95% CI 0.15–0.87, respectively). — <em>Mariscalco et al., Eur J Prev Cardiol, 2018.</em> All studies were observational; findings are associational, not causal.</div>
+          <div class="callout" style="margin-bottom:0">High-volume centres demonstrate substantially lower mortality for emergency thoracic aortic dissection repair: <strong style="color:var(--white)">12.6% versus 20.6% at medium-volume and 23.9% at low-volume centres</strong> in multivariate analysis. Patients at low-volume centres were more than twice as likely to die compared to those at high-volume centres (OR 2.06, 95% CI 1.25–3.38). — <em>Frontiers</em></div>
+        </div>
+      </div>
+
+      <!-- INTERNATIONAL PROGRAMMES TAB -->
+      <div id="tab-programmes" class="tab-panel">
+        <div style="display:flex;flex-direction:column;gap:24px">
+
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:4px">Duke University Medical Center — Thoracic Aortic Surgery Programme (TASP)</div>
+            <div style="font-size:11px;color:var(--steel-lite);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">Founded July 2005 · Durham, North Carolina, USA</div>
+            <p style="font-size:0.87rem;color:var(--muted);margin-bottom:12px">When outcomes of acute Type A aortic dissection repair were specifically assessed six years after programme implementation, results showed a dramatic 10-fold reduction in operative mortality compared to the preceding era, despite only a modest increase in institutional volume.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px">
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">33.9%</div><div style="font-size:11px;color:var(--muted)">Pre-TASP operative mortality (Type A)</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--success);font-family:var(--font-head)">2.8%</div><div style="font-size:11px;color:var(--muted)">Post-TASP operative mortality</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">85%</div><div style="font-size:11px;color:var(--muted)">Five-year survival post-TASP (vs 55% pre)</div></div>
+            </div>
+            <p style="font-size:0.82rem;color:var(--muted);font-style:italic">Andersen et al., JACC, 2014; Andersen et al., Ann Cardiothorac Surg, 2016</p>
+          </div>
+
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:4px">Barts Heart Centre — Aortovascular MDT</div>
+            <div style="font-size:11px;color:var(--steel-lite);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">St Bartholomew's Hospital, London, United Kingdom</div>
+            <p style="font-size:0.87rem;color:var(--muted);margin-bottom:12px">Five-year descriptive analysis of a formally constituted Aortovascular MDT demonstrating it functions as a genuine governance and decision-making mechanism — not merely a consultative forum.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px">
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">871</div><div style="font-size:11px;color:var(--muted)">MDT discussions over 5 years</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">649</div><div style="font-size:11px;color:var(--muted)">Unique patients reviewed</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--success);font-family:var(--font-head)">91%</div><div style="font-size:11px;color:var(--muted)">MDT decisions implemented</div></div>
+            </div>
+            <p style="font-size:0.82rem;color:var(--muted);font-style:italic">Yates et al., AME Surgical Journal, 2022</p>
+          </div>
+
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:4px">Calgary Aortic Programme — University of Calgary / Alberta Health Services</div>
+            <div style="font-size:11px;color:var(--steel-lite);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">Restructured 2019 · Calgary, Canada</div>
+            <p style="font-size:0.87rem;color:var(--muted);margin-bottom:12px">Previously, vascular surgery and cardiac surgery operated at separate hospitals with rare cross-consultation. Restructured in 2019 into a formal interdisciplinary aortic team at a neutral third hospital with a tandem cardiac-vascular operating model and shared unified referral entry point.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px">
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">54</div><div style="font-size:11px;color:var(--muted)">Patients seen — Year 1</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--success);font-family:var(--font-head)">221</div><div style="font-size:11px;color:var(--muted)">Patients seen — Year 3</div></div>
+            </div>
+            <p style="font-size:0.82rem;color:var(--muted);font-style:italic">McClure et al., AORTA (Stamford), 2023</p>
+          </div>
+
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:4px">University of Washington — Multidisciplinary Aortic Programme (MAT)</div>
+            <div style="font-size:11px;color:var(--steel-lite);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">Implemented 2019 · Seattle, USA</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px">
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--success);font-family:var(--font-head)">310%</div><div style="font-size:11px;color:var(--muted)">Increase in aortic procedural volume (2018–2022)</div></div>
+            </div>
+            <p style="font-size:0.87rem;color:var(--muted);margin-bottom:8px">Also noted: increased joint cardiothoracic-vascular evaluations, increased complexity of arch repairs, and increased genetic testing engagement. Authors note findings are correlational, not causal.</p>
+            <p style="font-size:0.82rem;color:var(--muted);font-style:italic">Sorber et al., 2025</p>
+          </div>
+
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:4px">NYU Langone Health — Multidisciplinary Aortic Surgery Team (MAST)</div>
+            <div style="font-size:11px;color:var(--steel-lite);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">New York, USA</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px">
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-head)">30.8%</div><div style="font-size:11px;color:var(--muted)">Pre-MAST mortality (Type A)</div></div>
+              <div style="background:rgba(13,31,60,0.6);border-radius:var(--radius);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--success);font-family:var(--font-head)">9.7%</div><div style="font-size:11px;color:var(--muted)">Post-MAST mortality</div></div>
+            </div>
+            <p style="font-size:0.82rem;color:var(--muted);font-style:italic">Beller et al., Innovations, 2015. Single-centre, non-concurrent comparison groups; findings observational.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- KEY SUMMARY TAB -->
+      <div id="tab-summary" class="tab-panel">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:14px">What the evidence consistently shows</div>
+            <ul style="font-size:0.87rem;color:var(--muted);line-height:1.8;margin-left:16px">
+              <li>Formal aortic team programmes are associated with reduced operative mortality across multiple independent institutions and countries</li>
+              <li>The evidence base is observational — no randomised trials exist; findings are associational, not causal</li>
+              <li>Guideline endorsement is now clear and consistent across ACC/AHA, EACTS/STS, ESVS, and EACTS/ESVS joint consensus documents</li>
+              <li>No single specialty is uniformly expert in all aspects of complex aortic care — the interdisciplinary model exists because the anatomy requires it</li>
+            </ul>
+          </div>
+          <div style="background:rgba(22,40,71,0.7);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px">
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:14px">What remains uncertain</div>
+            <ul style="font-size:0.87rem;color:var(--muted);line-height:1.8;margin-left:16px">
+              <li>Exact numeric volume thresholds for most complex thoracic procedures (Type A dissection, arch repair, TAAA)</li>
+              <li>The relative contributions of surgeon volume, institutional volume, team structure, and protocolisation to outcomes</li>
+              <li>Whether specific volume thresholds should be mandated versus used as quality benchmarks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="border-left-color:var(--sky)">
+          <strong>Clinical bottom line:</strong> The weight of evidence supports concentrating complex aortic surgery in structured, high-volume programmes with formal multidisciplinary governance. The SYDCAG programme is RNSH's contribution to that standard.
+        </div>
+      </div>
+
+      <!-- TYPE B DISSECTION TAB (kept from original) -->
+      <div id="tab-dissection" class="tab-panel">
         <div class="callout">
           <strong>The 14-day threshold:</strong> Current classification of Type B dissection as "acute" (&lt;14 days) vs "subacute/chronic" (≥14 days) is a <em>convention</em>, not a validated therapeutic cutoff. The biological transition — aortic remodelling, false lumen thrombosis, wall compliance — is continuous and does not reset at day 14. TEVAR outcomes data do not demonstrate a discrete inflection at this threshold.
         </div>
-
         <table class="ref-table">
           <thead>
-            <tr>
-              <th>Phase</th>
-              <th>Timeframe</th>
-              <th>Biological Context</th>
-              <th>Clinical Implication</th>
-            </tr>
+            <tr><th>Phase</th><th>Timeframe</th><th>Biological Context</th><th>Clinical Implication</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Hyperacute</td>
-              <td>0–24 h</td>
-              <td>Active propagation risk; maximal malperfusion risk; systemic inflammatory response</td>
-              <td>Medical stabilisation; TEVAR if complicated</td>
-            </tr>
-            <tr>
-              <td>Acute</td>
-              <td>1–14 d</td>
-              <td>Fragile intima; ongoing pain common; false lumen usually patent; remodelling not established</td>
-              <td>Optimal TEVAR window for uncomplicated high-risk anatomy (evolving evidence)</td>
-            </tr>
-            <tr>
-              <td>Subacute</td>
-              <td>14–90 d</td>
-              <td>Early remodelling; intima stabilising; false lumen may thrombose; wall still compliant</td>
-              <td>TEVAR technically feasible; debate on optimal timing vs expectant management</td>
-            </tr>
-            <tr>
-              <td>Chronic</td>
-              <td>&gt;90 d</td>
-              <td>Established remodelling; fibrosis; false lumen often patent; progressive dilatation risk</td>
-              <td>TEVAR for enlargement or malperfusion; technically more challenging</td>
-            </tr>
+            <tr><td>Hyperacute</td><td>0–24 h</td><td>Active propagation risk; maximal malperfusion risk; systemic inflammatory response</td><td>Medical stabilisation; TEVAR if complicated</td></tr>
+            <tr><td>Acute</td><td>1–14 d</td><td>Fragile intima; ongoing pain common; false lumen usually patent; remodelling not established</td><td>Optimal TEVAR window for uncomplicated high-risk anatomy (evolving evidence)</td></tr>
+            <tr><td>Subacute</td><td>14–90 d</td><td>Early remodelling; intima stabilising; false lumen may thrombose; wall still compliant</td><td>TEVAR technically feasible; debate on optimal timing vs expectant management</td></tr>
+            <tr><td>Chronic</td><td>&gt;90 d</td><td>Established remodelling; fibrosis; false lumen often patent; progressive dilatation risk</td><td>TEVAR for enlargement or malperfusion; technically more challenging</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div id="tab-definitions" class="tab-panel">
-        <table class="ref-table">
-          <thead>
-            <tr><th>Term</th><th>Definition</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Acute Aortic Syndrome (AAS)</td><td>Umbrella term for Type A dissection, Type B dissection, intramural haematoma (IMH), and penetrating aortic ulcer (PAU)</td></tr>
-            <tr><td>Uncomplicated Type B</td><td>No malperfusion, no rapid expansion (&gt;5 mm/48h), no refractory pain, no haemodynamic instability, no rupture</td></tr>
-            <tr><td>Complicated Type B</td><td>Malperfusion (visceral, spinal, limb), rupture, haemodynamic instability, refractory pain/hypertension, rapid expansion</td></tr>
-            <tr><td>TEVAR</td><td>Thoracic endovascular aortic repair — stent-graft coverage of descending thoracic aorta to exclude false lumen entry tear</td></tr>
-            <tr><td>FEVAR / BEVAR</td><td>Fenestrated / branched endovascular aortic repair — for juxtarenal or thoracoabdominal aneurysms requiring vessel preservation</td></tr>
-            <tr><td>SINE</td><td>Stent-graft-induced new entry — iatrogenic dissection at stent-graft margin, a recognised complication of TEVAR</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="tab-indications" class="tab-panel">
-        <table class="ref-table">
-          <thead>
-            <tr><th>Indication</th><th>Evidence Level</th><th>Notes</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Complicated acute Type B (malperfusion/rupture)</td><td>Class I — strong</td><td>Immediate TEVAR; fenestration if malperfusion persists</td></tr>
-            <tr><td>Uncomplicated Type B — high-risk anatomy</td><td>Class IIa — moderate</td><td>ADSORB, INSTEAD-XL data; benefit over 5 years; patient selection critical</td></tr>
-            <tr><td>Uncomplicated Type B — standard anatomy</td><td>Class IIb — evolving</td><td>Optimal medical therapy remains standard; ongoing RCT data awaited</td></tr>
-            <tr><td>Descending thoracic aneurysm ≥55 mm (♂) / ≥50 mm (♀)</td><td>Class I</td><td>Diameter thresholds; morphology and rate of growth also considered</td></tr>
-            <tr><td>Pseudoaneurysm / traumatic transection</td><td>Class I</td><td>TEVAR preferred over open in suitable anatomy</td></tr>
-          </tbody>
-        </table>
-      </div>
     </section>
 
     <!-- ══ INPUT FORM ════════════════════════════════════════ -->
@@ -1032,7 +1121,7 @@
           <div class="card">
             <div class="card-icon" style="background:rgba(46,109,164,0.15)">📷</div>
             <div class="card-title">Imaging Standard</div>
-            <p>CT aortography (chest / abdomen / pelvis, contrast, arterial phase) is the default study. Point-of-care echo for haemodynamically unstable patients — does not replace CT for operative planning. CT result communicated directly to both SYDCAG delegates simultaneously.</p>
+            <p>CT aortography (chest / abdomen / pelvis, contrast, arterial phase) is the default study. Point-of-care echo should be discussed as part of the protocol as an alternative for haemodynamically unstable patients before they can get a CT — functioning as an adjunctive diagnostic tool that, despite not replacing CT for operative planning, may have an important role in the activation algorithm. CT result communicated directly to both SYDCAG delegates simultaneously.</p>
           </div>
           <div class="card">
             <div class="card-icon" style="background:rgba(46,109,164,0.15)">📥</div>
@@ -1180,7 +1269,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-name">SYDCAG · Sydney Complex Aortic Group</div>
-      <div class="footer-meta">Royal North Shore Hospital · Vascular Surgery Research Department · Sydney North Health Network<br>
+      <div class="footer-meta">Royal North Shore Hospital · Vascular Surgery Research Department · Northern Sydney Local Health District<br>
       Dr S.A. Saavedra Fernández — Fellowship &amp; Research · Dr V. Puttaswamy — Head of Department</div>
     </div>
   </footer>
